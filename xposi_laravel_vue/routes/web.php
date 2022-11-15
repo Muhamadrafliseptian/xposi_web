@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix("/admin")->group(function(){
+
+    Route::group(["middleware" => "guest"], function () {
+        Route::get("/login", [LoginController::class, "index"]);
+    });
+
+    Route::post("/login", [LoginController::class, "post_login"]);
+
+    Route::group(["middleware" => "autentikasi"], function () {
+        // Logout
+        Route::get('/logout', [LoginController::class, "logout"]);
+        // Dashboard
+    Route::get("/dashboard", [DashboardController::class, "dashboard"]);
+
+  });
 });
