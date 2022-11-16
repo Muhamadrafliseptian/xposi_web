@@ -22,18 +22,18 @@
                         Master
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('admin/jasa') ? 'active' : '' }}" href="{{ url('/admin/jasa') }}">
-                            <i class="fa fa-fw fa-bars"></i> Jasa
+                        <a class="nav-link {{ Request::is('pages/admin/hero') ? 'active' : '' }}" href="{{ url('/admin/jasa') }}">
+                            <i class="fa fa-fw fa-bars"></i> Hero
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('admin/carousel') ? 'active' : '' }}" href="{{ url('/admin/carousel') }}">
-                            <i class="fa fa-fw fa-image"></i> Carousel
+                            <i class="fa fa-fw fa-image"></i> Services
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('admin/produk_layanan') ? 'active' : '' }}" href="{{ url('/admin/produk_layanan') }}">
-                            <i class="fa fa-fw fa-key"></i> Produk Layanan
+                            <i class="fa fa-fw fa-key"></i> Features
                         </a>
                     </li>
                     <li class="nav-divider">

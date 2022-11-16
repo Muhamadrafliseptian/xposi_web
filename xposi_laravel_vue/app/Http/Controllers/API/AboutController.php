@@ -13,7 +13,7 @@ class AboutController extends Controller
         $data = About::first();
 
         if (empty($data)) {
-            return response()->json([["message" => "Data Tidak Ada"]]);
+            return response()->json([["message" => "Data Not Found"]]);
         } else {
             return response()->json([$data]);
         }
