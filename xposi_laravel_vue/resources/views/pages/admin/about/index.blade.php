@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title', ' Hero')
+@section('title', ' About')
 
 @section('app_breadcrumb')
     <div class="row">
@@ -30,19 +30,19 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    @if (empty($data_hero))
+                    @if (empty($data_about))
                         <i class="fa fa-plus"></i> Tambah Data @yield('title')
                     @else
                         <i class="fa fa-edit"></i> Edit Data @yield('title')
                     @endif
                 </div>
-                @if (empty($data_hero))
-                    {{ Form::open(['url' => '/admin/hero/', 'enctype' => 'multipart/form-data']) }}
+                @if (empty($data_about))
+                    {{ Form::open(['url' => '/admin/about/', 'enctype' => 'multipart/form-data']) }}
                 @else
-                    {{ Form::open(['url' => '/admin/hero/' . encrypt($data_hero->id), 'enctype' => 'multipart/form-data']) }}
+                    {{ Form::open(['url' => '/admin/about/' . encrypt($data_about->id), 'enctype' => 'multipart/form-data']) }}
                     @method('PUT')
                     @php
-                        $hasil = trim($data_hero->image_hero, url('/'));
+                        $hasil = trim($data_about->image_about, url('/'));
 
                         $print = substr($hasil, 8);
                     @endphp
@@ -53,40 +53,34 @@
                         <div class="col-md-4">
                             {{ Form::label('logo', 'Foto') }}
                             <br>
-                            @if (empty($data_hero->image_hero))
+                            @if (empty($data_about->image_about))
                                 <img src="{{ url('/gambar/gambar_upload.jpg') }}" class="img-fluid gambar-preview mb-3"
                                     id="tampilGambar">
                             @else
-                                <img src="{{ $data_hero->image_hero }}" class="img-fluid gambar-preview mb-3"
+                                <img src="{{ $data_about->image_about }}" class="img-fluid gambar-preview mb-3"
                                     id="tampilGambar">
                             @endif
-                            {{ Form::file('image_hero', ['class' => 'form-control', 'onchange' => 'previewImage()']) }}
+                            {{ Form::file('image_about', ['class' => 'form-control', 'onchange' => 'previewImage()']) }}
                         </div>
                         <div class="col-md-8">
                             <div class="row">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        {{ Form::label('icon', 'Masukan nama icon') }}
-                                        {{ Form::text('icon_hero', empty($data_hero->icon_hero) ? null : $data_hero->icon_hero, ['class' => 'form-control', 'placeholder' => 'Masukkan Icon']) }}
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    {{ Form::label("title", "Masukkan Title Hero") }}
-                                    {{ Form::text("title_hero", empty($data_hero->title_hero) ? null : $data_hero->title_hero, ['class' => 'form-control', 'placeholder' => 'Masukkan Title' ]) }}
+                                    {{ Form::label("title", "Masukkan Title About") }}
+                                    {{ Form::text("title_about", empty($data_about->title_about) ? null : $data_about->title_about, ['class' => 'form-control', 'placeholder' => 'Masukkan Title' ]) }}
                                 </div>
                             </div>
                             <div class="form-group">
                                 {{ Form::label('description', 'description') }}
-                                {{ Form::textarea('description_hero', empty($data_hero->description_hero) ? null : $data_hero->description_hero, ['class' => 'form-control', 'placeholder' => 'Masukkan Deskrpisi']) }}
+                                {{ Form::textarea('description_about', empty($data_about->description_about) ? null : $data_about->description_about, ['class' => 'form-control', 'placeholder' => 'Masukkan Deskrpisi']) }}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
                     {{ Form::button("<i class='fa fa-times'></i> Batal", ['class' => 'btn btn-danger btn-sm btn-rounded', 'type' => 'reset']) }}
-                    @if (empty($data_hero))
+                    @if (empty($data_about))
                         {{ Form::button("<i class='fa fa-plus'></i> Tambah", ['class' => 'btn btn-primary btn-sm btn-rounded', 'type' => 'submit']) }}
                     @else
                         {{ Form::button("<i class='fa fa-save'></i> Simpan", ['class' => 'btn btn-success btn-sm btn-rounded', 'type' => 'submit']) }}
@@ -103,7 +97,7 @@
 
     <script type="text/javascript">
         function previewImage() {
-            const image = document.querySelector("#image_hero");
+            const image = document.querySelector("#image_about");
             const imgPreview = document.querySelector(".gambar-preview");
 
             imgPreview.style.display = "block";

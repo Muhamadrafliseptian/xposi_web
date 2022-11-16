@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\BackEnd\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HeroController;
+use App\Http\Controllers\BackEnd\HeroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::prefix("/admin")->group(function(){
     });
         //hero
     Route::resource("hero", HeroController::class);
+        //about
+    Route::resource("about", AboutController::class);
         //login
     Route::post("/login", [LoginController::class, "post_login"]);
         //autentikasi

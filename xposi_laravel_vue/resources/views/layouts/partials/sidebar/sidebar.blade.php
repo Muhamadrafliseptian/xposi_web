@@ -22,8 +22,13 @@
                         Master
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('pages/admin/hero') ? 'active' : '' }}" href="{{ url('/admin/jasa') }}">
+                        <a class="nav-link {{ Request::is('admin/hero') ? 'active' : '' }}" href="{{ url('/admin/hero') }}">
                             <i class="fa fa-fw fa-bars"></i> Hero
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('admin/about') ? 'active' : '' }}" href="{{ url('/admin/about') }}">
+                            <i class="fa fa-fw fa-bars"></i> About
                         </a>
                     </li>
                     <li class="nav-item">

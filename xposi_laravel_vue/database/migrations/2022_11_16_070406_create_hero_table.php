@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('hero', function (Blueprint $table) {
             $table->id();
-            $table->string("icon");
-            $table->string("title");
-            $table->text("description");
-            $table->string("image");
+            $table->string("icon_hero");
+            $table->string("title_hero");
+            $table->text("description_hero");
+            $table->string("image_hero");
             $table->timestamps();
         });
     }

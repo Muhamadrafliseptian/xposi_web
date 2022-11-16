@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use App\Models\About;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class AboutController extends Controller
+class AboutApiController extends Controller
 {
     public function index (){
 
