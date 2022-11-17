@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('admin/produk_layanan') ? 'active' : '' }}" href="{{ url('/admin/produk_layanan') }}">
+                        <a class="nav-link {{ Request::is('admin/features') ? 'active' : '' }}" href="{{ url('/admin/produk_layanan') }}">
                             <i class="fa fa-fw fa-key"></i> Features
                         </a>
                     </li>

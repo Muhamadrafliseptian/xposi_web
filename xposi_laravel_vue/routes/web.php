@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BackEnd\AboutController;
+use App\Http\Controllers\BackEnd\FeaturesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
@@ -29,6 +30,8 @@ Route::prefix("/admin")->group(function(){
     Route::resource("hero", HeroController::class);
         //about
     Route::resource("about", AboutController::class);
+        //features
+    Route::resource("features", FeaturesController::class);
         //login
     Route::post("/login", [LoginController::class, "post_login"]);
         //autentikasi
