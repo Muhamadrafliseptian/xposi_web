@@ -18,7 +18,7 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $data = [
-            "data_informasi_login" => InformasiLogin::where("id", Auth::user()->id)->get()
+            "data_informasi_login" => InformasiLogin::where("id_user", Auth::user()->id)->orderBy('id','desc')->limit('1')->get()
         ];
         return view("pages.admin.dashboard",$data);
     }

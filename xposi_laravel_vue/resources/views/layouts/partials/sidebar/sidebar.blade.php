@@ -13,7 +13,7 @@
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}" href="{{ url('/admin/dashboard') }}">
-                            <i class="fa fa-fw fa-user-circle"></i>
+                            <i class="fa-solid fa-gauge"></i>
                             Dashboard
                             <span class="badge badge-success">6</span>
                         </a>
@@ -23,7 +23,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('admin/hero') ? 'active' : '' }}" href="{{ url('/admin/hero') }}">
-                            <i class="fa fa-fw fa-bars"></i> Hero
+                            <i class="fa-sharp fa-solid fa-camera-retro"></i> Hero
                         </a>
                     </li>
                     <li class="nav-item">

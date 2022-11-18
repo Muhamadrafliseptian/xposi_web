@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BackEnd\HeroController;
+use App\Http\Controllers\BackEnd\ProfileCompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::prefix("/admin")->group(function(){
     Route::resource("about", AboutController::class);
         //features
     Route::resource("features", FeaturesController::class);
+        //profile_company
+    Route::resource("profile_company", ProfileCompanyController::class);
         //login
     Route::post("/login", [LoginController::class, "post_login"]);
         //autentikasi

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>INVENTARA | Login</title>
+    <title>XPOSI | Login</title>
     <link rel="stylesheet" href="{{ url('ui_admin') }}/ui/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="{{ url('ui_admin') }}/ui/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('ui_admin') }}/ui/assets/libs/css/style.css">

@@ -1,3 +1,7 @@
+@php
+use Carbon\Carbon;
+@endphp
+
 @extends('template')
 
 @section('title', 'Dashboard')
@@ -73,7 +77,7 @@
                                     <tr>
                                         <td class="text-center">{{ ++$no }}.</td>
                                         <td>{{ $data->nama }}</td>
-                                        <td class="text-center">{{ $data->created_at }}</td>
+                                        <td class="text-center">{{ Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->isoFormat('dddd, D MMMM Y H:mm:s') }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
