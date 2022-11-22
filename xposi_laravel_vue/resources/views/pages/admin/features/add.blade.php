@@ -67,7 +67,12 @@
 @endsection
 
 @section('app_js')
-
+    <script>
+        $(function() {
+            CKEDITOR.replace('description_features')
+        })
+    </script>
+    <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
     <script src="{{ url('build/js/jquery.validate.min.js') }}"></script>
     <script src="{{ url('build/js/additional-methods.min.js') }}"></script>
 

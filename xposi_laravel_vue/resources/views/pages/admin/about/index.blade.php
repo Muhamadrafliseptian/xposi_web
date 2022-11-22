@@ -51,14 +51,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            {{ Form::label('logo', 'Foto') }}
+                            {{ Form::label('logo', 'Image') }}
                             <br>
                             @if (empty($data_about->image_about))
-                                <img src="{{ url('/gambar/gambar_upload.jpg') }}" class="img-fluid gambar-preview mb-3"
-                                    id="tampilGambar">
+                                <img src="{{ url('/gambar/gambar_upload.jpg') }}" class="img-fluid image-preview mb-3"
+                                    id="viewImage">
                             @else
-                                <img src="{{ $data_about->image_about }}" class="img-fluid gambar-preview mb-3"
-                                    id="tampilGambar">
+                                <img src="{{ $data_about->image_about }}" class="img-fluid image-preview mb-3"
+                                    id="viewImage">
                             @endif
                             {{ Form::file('image_about', ['class' => 'form-control', 'onchange' => 'previewImage()']) }}
                         </div>
@@ -67,23 +67,23 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    {{ Form::label("title", "Masukkan Title About") }}
-                                    {{ Form::text("title_about", empty($data_about->title_about) ? null : $data_about->title_about, ['class' => 'form-control', 'placeholder' => 'Masukkan Title' ]) }}
+                                    {{ Form::label("title", " Title About") }}
+                                    {{ Form::text("title_about", empty($data_about->title_about) ? null : $data_about->title_about, ['class' => 'form-control', 'placeholder' => 'Please, insert title about' ]) }}
                                 </div>
                             </div>
                             <div class="form-group">
-                                {{ Form::label('description', 'description') }}
-                                {{ Form::textarea('description_about', empty($data_about->description_about) ? null : $data_about->description_about, ['class' => 'form-control', 'placeholder' => 'Masukkan Deskrpisi']) }}
+                                {{ Form::label('description', 'Description') }}
+                                {{ Form::textarea('description_about', empty($data_about->description_about) ? null : $data_about->description_about, ['class' => 'form-control', 'placeholder' => 'Please, insert description']) }}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    {{ Form::button("<i class='fa fa-times'></i> Batal", ['class' => 'btn btn-danger btn-sm btn-rounded', 'type' => 'reset']) }}
+                    {{ Form::button("<i class='fa fa-times'></i> Cancel", ['class' => 'btn btn-danger btn-sm btn-rounded', 'type' => 'reset']) }}
                     @if (empty($data_about))
-                        {{ Form::button("<i class='fa fa-plus'></i> Tambah", ['class' => 'btn btn-primary btn-sm btn-rounded', 'type' => 'submit']) }}
+                        {{ Form::button("<i class='fa fa-plus'></i> Add", ['class' => 'btn btn-primary btn-sm btn-rounded', 'type' => 'submit']) }}
                     @else
-                        {{ Form::button("<i class='fa fa-save'></i> Simpan", ['class' => 'btn btn-success btn-sm btn-rounded', 'type' => 'submit']) }}
+                        {{ Form::button("<i class='fa fa-save'></i> Save", ['class' => 'btn btn-success btn-sm btn-rounded', 'type' => 'submit']) }}
                     @endif
                 </div>
                 {{ Form::close() }}
@@ -94,11 +94,16 @@
 @endsection
 
 @section('app_js')
-
+    <script>
+        $(function() {
+            CKEDITOR.replace('description_about')
+        })
+    </script>
+    <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
     <script type="text/javascript">
         function previewImage() {
             const image = document.querySelector("#image_about");
-            const imgPreview = document.querySelector(".gambar-preview");
+            const imgPreview = document.querySelector(".image-preview");
 
             imgPreview.style.display = "block";
 
@@ -107,8 +112,8 @@
 
             oFReader.onload = function(oFREvent) {
                 imgPreview.src = oFREvent.target.result;
-                $("#tampilGambar").addClass('mb-3');
-                $("#tampilGambar").height("250");
+                $("#viewImage").addClass('mb-3');
+                $("#viewImage").height("250");
             }
         }
     </script>

@@ -39,7 +39,7 @@ use Carbon\Carbon;
         <div class="col-md-12">
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading">Sukses Login!</h4>
-                <p>Selamat Datang <b>{{ Auth::user()->nama }}</b> di <b>APLIKASI Xposi</b></p>
+                <p>Hi, Good Morning <b>{{ Auth::user()->nama }}</b> di <b>Dashboard {{ $data_profile->company_name }}</b></p>
                 <hr>
                 <p class="mb-0">
                     Silahkan Pilih Menu Untuk Memulai Program.

@@ -12,8 +12,12 @@
                 <li class="nav-item dropdown nav-user">
                     <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
+                        @if (empty($data_profile->company_image))
                             <img src="{{ url('/gambar') }}/gambar_user.png" alt=""
                                 class="user-avatar-md rounded-circle">
+                        @else
+                            <img src="{{ url('/storage/' . $data_profile->company_image) }}" class="user-avatar-md rounded-circle">
+                        @endif
                     </a>
                     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
                         aria-labelledby="navbarDropdownMenuLink2">

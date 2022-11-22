@@ -31,7 +31,7 @@
             <div class="card">
                 <div class="card-header">
                     @if (empty($data_hero))
-                        <i class="fa fa-plus"></i> Tambah Data @yield('title')
+                        <i class="fa fa-plus"></i> Add Data @yield('title')
                     @else
                         <i class="fa fa-edit"></i> Edit Data @yield('title')
                     @endif
@@ -51,14 +51,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            {{ Form::label('logo', 'Foto') }}
+                            {{ Form::label('logo', 'Image') }}
                             <br>
                             @if (empty($data_hero->image_hero))
-                                <img src="{{ url('/gambar/gambar_upload.jpg') }}" class="img-fluid gambar-preview mb-3"
-                                    id="tampilGambar">
+                                <img src="{{ url('/gambar/gambar_upload.jpg') }}" class="img-fluid image-preview mb-3"
+                                    id="viewImage">
                             @else
-                                <img src="{{ $data_hero->image_hero }}" class="img-fluid gambar-preview mb-3"
-                                    id="tampilGambar">
+                                <img src="{{ $data_hero->image_hero }}" class="img-fluid image-preview mb-3"
+                                    id="viewImage">
                             @endif
                             {{ Form::file('image_hero', ['class' => 'form-control', 'onchange' => 'previewImage()']) }}
                         </div>
@@ -68,28 +68,28 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        {{ Form::label('icon', 'Masukan nama icon') }}
-                                        {{ Form::text('icon_hero', empty($data_hero->icon_hero) ? null : $data_hero->icon_hero, ['class' => 'form-control', 'placeholder' => 'Masukkan Icon']) }}
+                                        {{ Form::label('icon', 'Icon Hero') }}
+                                        {{ Form::text('icon_hero', empty($data_hero->icon_hero) ? null : $data_hero->icon_hero, ['class' => 'form-control', 'placeholder' => 'Please, insert icon hero']) }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    {{ Form::label("title", "Masukkan Title Hero") }}
-                                    {{ Form::text("title_hero", empty($data_hero->title_hero) ? null : $data_hero->title_hero, ['class' => 'form-control', 'placeholder' => 'Masukkan Title' ]) }}
+                                    {{ Form::label("title", "Title Hero") }}
+                                    {{ Form::text("title_hero", empty($data_hero->title_hero) ? null : $data_hero->title_hero, ['class' => 'form-control', 'placeholder' => 'Please, insert title hero' ]) }}
                                 </div>
                             </div>
                             <div class="form-group">
-                                {{ Form::label('description', 'description') }}
-                                {{ Form::textarea('description_hero', empty($data_hero->description_hero) ? null : $data_hero->description_hero, ['class' => 'form-control', 'placeholder' => 'Masukkan Deskrpisi']) }}
+                                {{ Form::label('description', 'Description') }}
+                                {{ Form::textarea('description_hero', empty($data_hero->description_hero) ? null : $data_hero->description_hero, ['class' => 'form-control', 'placeholder' => 'Please, insert description hero']) }}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    {{ Form::button("<i class='fa fa-times'></i> Batal", ['class' => 'btn btn-danger btn-sm btn-rounded', 'type' => 'reset']) }}
+                    {{ Form::button("<i class='fa fa-times'></i> Cancel", ['class' => 'btn btn-danger btn-sm btn-rounded', 'type' => 'reset']) }}
                     @if (empty($data_hero))
-                        {{ Form::button("<i class='fa fa-plus'></i> Tambah", ['class' => 'btn btn-primary btn-sm btn-rounded', 'type' => 'submit']) }}
+                        {{ Form::button("<i class='fa fa-plus'></i> Add", ['class' => 'btn btn-primary btn-sm btn-rounded', 'type' => 'submit']) }}
                     @else
-                        {{ Form::button("<i class='fa fa-save'></i> Simpan", ['class' => 'btn btn-success btn-sm btn-rounded', 'type' => 'submit']) }}
+                        {{ Form::button("<i class='fa fa-save'></i> Save", ['class' => 'btn btn-success btn-sm btn-rounded', 'type' => 'submit']) }}
                     @endif
                 </div>
                 {{ Form::close() }}
@@ -100,11 +100,16 @@
 @endsection
 
 @section('app_js')
-
+    <script>
+        $(function() {
+            CKEDITOR.replace('description_hero')
+        })
+    </script>
+    <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
     <script type="text/javascript">
         function previewImage() {
             const image = document.querySelector("#image_hero");
-            const imgPreview = document.querySelector(".gambar-preview");
+            const imgPreview = document.querySelector(".image-preview");
 
             imgPreview.style.display = "block";
 
@@ -113,8 +118,8 @@
 
             oFReader.onload = function(oFREvent) {
                 imgPreview.src = oFREvent.target.result;
-                $("#tampilGambar").addClass('mb-3');
-                $("#tampilGambar").height("250");
+                $("#viewImage").addClass('mb-3');
+                $("#viewImage").height("250");
             }
         }
     </script>

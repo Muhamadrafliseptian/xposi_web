@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title', ' Profil Perusahaan')
+@section('title', ' Profile Company')
 
 @section('app_breadcrumb')
     <div class="row">
@@ -84,10 +84,12 @@
                                         {{ Form::text('company_name', empty($data_profile->company_name) ? null : $data_profile->company_name, ['class' => 'form-control', 'placeholder' => 'Masukkan Nama']) }}
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                {{ Form::label('alamat', 'Alamat') }}
-                                {{ Form::text("company_address", empty($data_profile->company_address) ? null : $data_profile->company_address, ['class' => 'form-control', 'placeholder' => 'Masukkan Alamat']) }}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ Form::label('alamat', 'Alamat') }}
+                                        {{ Form::text("company_address", empty($data_profile->company_address) ? null : $data_profile->company_address, ['class' => 'form-control', 'placeholder' => 'Masukkan Alamat']) }}
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 {{ Form::label('deskripsi', 'Deskrpisi') }}
@@ -112,7 +114,12 @@
 @endsection
 
 @section('app_js')
-
+    <script>
+        $(function() {
+            CKEDITOR.replace('company_description')
+        })
+    </script>
+    <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
     <script type="text/javascript">
         function previewImage() {
             const image = document.querySelector("#logo");

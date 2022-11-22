@@ -55,11 +55,10 @@
                         {{ Form::label('description_features', 'Deskripsi') }}
                         {{ Form::textarea('description_features', $edit->description_features, ['class' => 'form-control', 'placeholder' => 'Masukkan Deskripsi']) }}
                     </div>
-
                 </div>
                 <div class="card-footer">
-                    {{ Form::button('<i class="fa fa-times"></i> Batal', ['class' => 'btn btn-danger btn-sm btn-rounded', 'type' => 'reset']) }}
-                    {{ Form::button('<i class="fa fa-save"></i> Simpan', ['class' => 'btn btn-success btn-sm btn-rounded', 'type' => 'submit']) }}
+                    {{ Form::button('<i class="fa fa-times"></i> Cancel', ['class' => 'btn btn-danger btn-sm btn-rounded', 'type' => 'reset']) }}
+                    {{ Form::button('<i class="fa fa-save"></i> Save', ['class' => 'btn btn-success btn-sm btn-rounded', 'type' => 'submit']) }}
                 </div>
             </div>
         </div>
@@ -68,7 +67,12 @@
 @endsection
 
 @section('app_js')
-
+    <script>
+        $(function() {
+            CKEDITOR.replace('description_features')
+        })
+    </script>
+    <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
     <script src="{{ url('build/js/jquery.validate.min.js') }}"></script>
     <script src="{{ url('build/js/additional-methods.min.js') }}"></script>
 

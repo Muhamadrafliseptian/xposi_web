@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-md-2">
                             <a href="{{ url('/admin/features/create') }}" class="btn btn-primary btn-rounded btn-sm">
-                                <i class="fa fa-plus"></i> Tambah @yield('title')
+                                <i class="fa fa-plus"></i> Add Data @yield('title')
                             </a>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                                     <th class="text-center">No</th>
                                     <th>Icon</th>
                                     <th>Title</th>
-                                    <th>Deskripsi</th>
+                                    <th>Description</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
@@ -68,7 +68,7 @@
                                         <td class="text-center">{{ ++$no }}.</td>
                                         <td>{{ $data->icon_features }}</td>
                                         <td>{{ $data->title_features }}</td>
-                                        <td>{{ $data->description_features }}</td>
+                                        <td>{!! $data->description_features !!}</td>
                                         <td class="text-center">
                                             <a href="{{ url('/admin/features/' . encrypt($data->id) . '/edit') }}"
                                                 class="btn btn-warning btn-sm btn-rounded">
@@ -76,7 +76,7 @@
                                             </a>
                                             <button id="hapusJasa" data-id="{{ $data->id }}"
                                                 class="btn btn-danger btn-sm btn-rounded">
-                                                <i class="fa fa-trash"></i> Hapus
+                                                <i class="fa fa-trash"></i> Delete
                                             </button>
                                         </td>
                                     </tr>
@@ -106,13 +106,13 @@
             let id = $(this).data('id');
 
             Swal.fire({
-                title: 'Apakah Anda Yakin?',
-                text: "Anda tidak akan dapat mengembalikan ini!",
+                title: 'Are You Sure?',
+                text: "You can't get back your data if you delete this!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Iyaa, Saya Yakin'
+                confirmButtonText: 'Yes, im sure'
             }).then((result) => {
                 if (result.isConfirmed) {
                     form_string =

@@ -1,4 +1,4 @@
-<div class="nav-left-sidebar sidebar-dark">
+<div class="nav-left-sidebar sidebar-primary">
     <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
@@ -15,7 +15,6 @@
                         <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}" href="{{ url('/admin/dashboard') }}">
                             <i class="fa-solid fa-gauge"></i>
                             Dashboard
-                            <span class="badge badge-success">6</span>
                         </a>
                     </li>
                     <li class="nav-divider">
@@ -32,31 +31,30 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('admin/carousel') ? 'active' : '' }}" href="{{ url('/admin/carousel') }}">
-                            <i class="fa fa-fw fa-image"></i> Services
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::is('admin/features') ? 'active' : '' }}" href="{{ url('/admin/produk_layanan') }}">
+                        <a class="nav-link {{ Request::is('admin/features') ? 'active' : '' }}" href="{{ url('/admin/features') }}">
                             <i class="fa fa-fw fa-key"></i> Features
+                        </a>
+                    </li><li class="nav-item">
+                        <a class="nav-link {{ Request::is('admin/gallery') ? 'active' : '' }}" href="{{ url('/admin/gallery') }}">
+                            <i class="fa fa-image"></i> Gallery
                         </a>
                     </li>
                     <li class="nav-divider">
-                        Pengaturan
+                        Settings
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('admin/profil_perusahaan') ? 'active' : '' }}" href="{{ url('/admin/profil_perusahaan') }}">
-                            <i class="fa fa-fw fa-search"></i> Profil Perusahaan
+                        <a class="nav-link {{ Request::is('admin/profile_company') ? 'active' : '' }}" href="{{ url('/admin/profile_company') }}">
+                            <i class="fa fa-fw fa-search"></i> Profile Company
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('admin/hubungi_kami') ? 'active' : '' }}" href="{{ url('/admin/hubungi_kami') }}">
-                            <i class="fa fa-fw fa-phone"></i> Hubungi Kami
+                            <i class="fa fa-fw fa-phone"></i> Messages
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('admin/informasi_login') ? 'active' : '' }}" href="{{ url('/admin/informasi_login') }}">
-                            <i class="fa fa-fw fa-envelope"></i> Informasi Login
+                        <a class="nav-link {{ Request::is('admin/login_information') ? 'active' : '' }}" href="{{ url('/admin/login_information') }}">
+                            <i class="fa-solid fa-circle-info"></i> Login Information
                         </a>
                     </li>
                     <li class="nav-divider">
