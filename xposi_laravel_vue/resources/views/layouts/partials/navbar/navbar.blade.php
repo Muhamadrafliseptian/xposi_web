@@ -1,7 +1,17 @@
+@php
+use App\Models\ProfileCompany;
+@endphp
 <div class="dashboard-header">
     <nav class="navbar navbar-expand-lg bg-white fixed-top">
         <a class="navbar-brand" href="index.html">
-            rafli
+            @php
+                $data_profile = ProfileCompany::select('company_name')->first();
+            @endphp
+            @if (empty($data_profile))
+                INVENTARA
+            @else
+                {{ $data_profile->company_name }}
+            @endif
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,11 +22,11 @@
                 <li class="nav-item dropdown nav-user">
                     <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        @if (empty($data_profile->company_image))
+                         @if (empty(Auth::user()->foto))
                             <img src="{{ url('/gambar') }}/gambar_user.png" alt=""
                                 class="user-avatar-md rounded-circle">
                         @else
-                            <img src="{{ url('/storage/' . $data_profile->company_image) }}" class="user-avatar-md rounded-circle">
+                            <img src="{{ url('/storage/' . Auth::user()->foto) }}" class="user-avatar-md rounded-circle">
                         @endif
                     </a>
                     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
@@ -28,7 +38,7 @@
                             <span class="status"></span>
                             <span class="ml-2">Administrator</span>
                         </div>
-                        <a class="dropdown-item" href="{{ url('/admin/profil_saya') }}">
+                        <a class="dropdown-item" href="{{ url('/admin/profile_administrator') }}">
                             <i class="fas fa-cog mr-2"></i>Setting
                         </a>
                         <a class="dropdown-item" href="{{ url('/admin/logout') }}">

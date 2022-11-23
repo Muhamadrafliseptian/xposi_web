@@ -63,12 +63,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                             data-target="#submenu-akun" aria-controls="submenu-akun"><i class="fa fa-fw fa-users"></i>
-                            Akun
+                            Profile Admin
                         </a>
                         <div id="submenu-akun" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/admin/users') }}">
+                                        <a class="nav-link" href="{{ url('/admin/profile_administrator') }}">
                                             Users
                                         </a>
                                     </li>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BackEnd\AboutController;
 use App\Http\Controllers\BackEnd\FeaturesController;
+use App\Http\Controllers\BackEnd\GalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
@@ -34,6 +35,8 @@ Route::prefix("/admin")->group(function(){
     Route::resource("about", AboutController::class);
         //features
     Route::resource("features", FeaturesController::class);
+        //gallery
+    Route::resource("gallery", GalleryController::class);
         //profile_company
     Route::resource("profile_company", ProfileCompanyController::class);
         // Profil Administrator
