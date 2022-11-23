@@ -34,7 +34,18 @@
                         <a class="nav-link {{ Request::is('admin/features') ? 'active' : '' }}" href="{{ url('/admin/features') }}">
                             <i class="fa fa-fw fa-key"></i> Features
                         </a>
-                    </li><li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('admin/how_book') ? 'active' : '' }}" href="{{ url('/admin/how_book') }}">
+                            <i class="fa fa-image"></i> How Book Event?
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('admin/event_newest') ? 'active' : '' }}" href="{{ url('/admin/event_newest') }}">
+                            <i class="fa fa-image"></i> Event
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ Request::is('admin/gallery') ? 'active' : '' }}" href="{{ url('/admin/gallery') }}">
                             <i class="fa fa-image"></i> Gallery
                         </a>

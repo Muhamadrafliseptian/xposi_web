@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\BackEnd\AboutController;
+use App\Http\Controllers\BackEnd\EventController;
 use App\Http\Controllers\BackEnd\FeaturesController;
 use App\Http\Controllers\BackEnd\GalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BackEnd\HeroController;
+use App\Http\Controllers\BackEnd\HowBookController;
 use App\Http\Controllers\BackEnd\ProfileAdministratorController;
 use App\Http\Controllers\BackEnd\ProfileCompanyController;
 
@@ -35,8 +37,16 @@ Route::prefix("/admin")->group(function(){
     Route::resource("about", AboutController::class);
         //features
     Route::resource("features", FeaturesController::class);
+        //event_newest
+    Route::resource("event_newest", EventController::class);
+        //how to book
+    Route::resource("how_book", HowBookController::class);
+
         //gallery
+    Route::get("/gallery/edit", [GalleryController::class, "edit"]);
+    Route::put("/gallery/simpan", [GalleryController::class, "update"]);
     Route::resource("gallery", GalleryController::class);
+
         //profile_company
     Route::resource("profile_company", ProfileCompanyController::class);
         // Profil Administrator
