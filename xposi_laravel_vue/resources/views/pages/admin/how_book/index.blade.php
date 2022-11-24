@@ -116,7 +116,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     form_string =
-                        "<form method=\"POST\" action=\"{{ url('/admin/features') }}/" +
+                        "<form method=\"POST\" action=\"{{ url('/admin/how_book') }}/" +
                         id +
                         "\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"
                     form = $(form_string)

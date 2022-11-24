@@ -37,12 +37,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('admin/how_book') ? 'active' : '' }}" href="{{ url('/admin/how_book') }}">
-                            <i class="fa fa-image"></i> How Book Event?
+                            <i class="fas fa-question-circle"></i> How Book Event?
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('admin/event_newest') ? 'active' : '' }}" href="{{ url('/admin/event_newest') }}">
-                            <i class="fa fa-image"></i> Event
+                            <i class="fa-regular fa-calendar-minus"></i> Event
                         </a>
                     </li>
                     <li class="nav-item">
