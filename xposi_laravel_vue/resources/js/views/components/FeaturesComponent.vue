@@ -1,88 +1,353 @@
 <template>
-  <section id="features" class="features">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Features</h2>
-        <p>
-          Check The Features <br />
-          Xposi Mobile
-        </p>
-      </div>
+    <section id="features" class="features">
+        <div class="container" data-aos="fade-up">
+            <header class="section-header">
+                <h2>Features</h2>
+                <p>Laboriosam et omnis fuga quis dolor direda fara</p>
+            </header>
 
-      <div class="row" data-aos="fade-left">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
-            <i class="ri-store-line" style="color: #ffbb2c"></i>
-            <h3><a href="">Booking Event</a></h3>
-          </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img
+                        src="assets/img/features.png"
+                        class="img-fluid"
+                        alt=""
+                    />
+                </div>
+
+                <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+                    <div class="row align-self-center gy-4">
+                        <div
+                            class="col-md-6"
+                            data-aos="zoom-out"
+                            data-aos-delay="200"
+                        >
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="bi bi-check"></i>
+                                <h3>Eos aspernatur rem</h3>
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-md-6"
+                            data-aos="zoom-out"
+                            data-aos-delay="300"
+                        >
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="bi bi-check"></i>
+                                <h3>Facilis neque ipsa</h3>
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-md-6"
+                            data-aos="zoom-out"
+                            data-aos-delay="400"
+                        >
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="bi bi-check"></i>
+                                <h3>Volup amet voluptas</h3>
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-md-6"
+                            data-aos="zoom-out"
+                            data-aos-delay="500"
+                        >
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="bi bi-check"></i>
+                                <h3>Rerum omnis sint</h3>
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-md-6"
+                            data-aos="zoom-out"
+                            data-aos-delay="600"
+                        >
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="bi bi-check"></i>
+                                <h3>Alias possimus</h3>
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-md-6"
+                            data-aos="zoom-out"
+                            data-aos-delay="700"
+                        >
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="bi bi-check"></i>
+                                <h3>Repellendus mollitia</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / row -->
+
+            <!-- Feature Tabs -->
+            <div class="row feture-tabs" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <h3>
+                        Neque officiis dolore maiores et exercitationem quae est
+                        seda lidera pat claero
+                    </h3>
+
+                    <!-- Tabs -->
+                    <ul class="nav nav-pills mb-3">
+                        <li>
+                            <a
+                                class="nav-link active"
+                                data-bs-toggle="pill"
+                                href="#tab1"
+                                >Saepe fuga</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="nav-link"
+                                data-bs-toggle="pill"
+                                href="#tab2"
+                                >Voluptates</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="nav-link"
+                                data-bs-toggle="pill"
+                                href="#tab3"
+                                >Corrupti</a
+                            >
+                        </li>
+                    </ul>
+                    <!-- End Tabs -->
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="tab1">
+                            <p>
+                                Consequuntur inventore voluptates consequatur
+                                aut vel et. Eos doloribus expedita. Sapiente
+                                atque consequatur minima nihil quae aspernatur
+                                quo suscipit voluptatem.
+                            </p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-check2"></i>
+                                <h4>
+                                    Repudiandae rerum velit modi et officia
+                                    quasi facilis
+                                </h4>
+                            </div>
+                            <p>
+                                Laborum omnis voluptates voluptas qui sit
+                                aliquam blanditiis. Sapiente minima commodi
+                                dolorum non eveniet magni quaerat nemo et.
+                            </p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-check2"></i>
+                                <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                            </div>
+                            <p>
+                                Non quod totam minus repellendus autem sint
+                                velit. Rerum debitis facere soluta tenetur. Iure
+                                molestiae assumenda sunt qui inventore eligendi
+                                voluptates nisi at. Dolorem quo tempora. Quia et
+                                perferendis.
+                            </p>
+                        </div>
+                        <!-- End Tab 1 Content -->
+
+                        <div class="tab-pane fade show" id="tab2">
+                            <p>
+                                Consequuntur inventore voluptates consequatur
+                                aut vel et. Eos doloribus expedita. Sapiente
+                                atque consequatur minima nihil quae aspernatur
+                                quo suscipit voluptatem.
+                            </p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-check2"></i>
+                                <h4>
+                                    Repudiandae rerum velit modi et officia
+                                    quasi facilis
+                                </h4>
+                            </div>
+                            <p>
+                                Laborum omnis voluptates voluptas qui sit
+                                aliquam blanditiis. Sapiente minima commodi
+                                dolorum non eveniet magni quaerat nemo et.
+                            </p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-check2"></i>
+                                <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                            </div>
+                            <p>
+                                Non quod totam minus repellendus autem sint
+                                velit. Rerum debitis facere soluta tenetur. Iure
+                                molestiae assumenda sunt qui inventore eligendi
+                                voluptates nisi at. Dolorem quo tempora. Quia et
+                                perferendis.
+                            </p>
+                        </div>
+                        <!-- End Tab 2 Content -->
+
+                        <div class="tab-pane fade show" id="tab3">
+                            <p>
+                                Consequuntur inventore voluptates consequatur
+                                aut vel et. Eos doloribus expedita. Sapiente
+                                atque consequatur minima nihil quae aspernatur
+                                quo suscipit voluptatem.
+                            </p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-check2"></i>
+                                <h4>
+                                    Repudiandae rerum velit modi et officia
+                                    quasi facilis
+                                </h4>
+                            </div>
+                            <p>
+                                Laborum omnis voluptates voluptas qui sit
+                                aliquam blanditiis. Sapiente minima commodi
+                                dolorum non eveniet magni quaerat nemo et.
+                            </p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-check2"></i>
+                                <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                            </div>
+                            <p>
+                                Non quod totam minus repellendus autem sint
+                                velit. Rerum debitis facere soluta tenetur. Iure
+                                molestiae assumenda sunt qui inventore eligendi
+                                voluptates nisi at. Dolorem quo tempora. Quia et
+                                perferendis.
+                            </p>
+                        </div>
+                        <!-- End Tab 3 Content -->
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <img
+                        src="assets/img/features-2.png"
+                        class="img-fluid"
+                        alt=""
+                    />
+                </div>
+            </div>
+            <!-- End Feature Tabs -->
+
+            <!-- Feature Icons -->
+            <div class="row feature-icons" data-aos="fade-up">
+                <h3>Ratione mollitia eos ab laudantium rerum beatae quo</h3>
+
+                <div class="row">
+                    <div
+                        class="col-xl-4 text-center"
+                        data-aos="fade-right"
+                        data-aos-delay="100"
+                    >
+                        <img
+                            src="assets/img/features-3.png"
+                            class="img-fluid p-4"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="col-xl-8 d-flex content">
+                        <div class="row align-self-center gy-4">
+                            <div class="col-md-6 icon-box" data-aos="fade-up">
+                                <i class="ri-line-chart-line"></i>
+                                <div>
+                                    <h4>Corporis voluptates sit</h4>
+                                    <p>
+                                        Consequuntur sunt aut quasi enim aliquam
+                                        quae harum pariatur laboris nisi ut
+                                        aliquip
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="col-md-6 icon-box"
+                                data-aos="fade-up"
+                                data-aos-delay="100"
+                            >
+                                <i class="ri-stack-line"></i>
+                                <div>
+                                    <h4>Ullamco laboris nisi</h4>
+                                    <p>
+                                        Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia
+                                        deserunt
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="col-md-6 icon-box"
+                                data-aos="fade-up"
+                                data-aos-delay="200"
+                            >
+                                <i class="ri-brush-4-line"></i>
+                                <div>
+                                    <h4>Labore consequatur</h4>
+                                    <p>
+                                        Aut suscipit aut cum nemo deleniti aut
+                                        omnis. Doloribus ut maiores omnis facere
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="col-md-6 icon-box"
+                                data-aos="fade-up"
+                                data-aos-delay="300"
+                            >
+                                <i class="ri-magic-line"></i>
+                                <div>
+                                    <h4>Beatae veritatis</h4>
+                                    <p>
+                                        Expedita veritatis consequuntur nihil
+                                        tempore laudantium vitae denat pacta
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="col-md-6 icon-box"
+                                data-aos="fade-up"
+                                data-aos-delay="400"
+                            >
+                                <i class="ri-command-line"></i>
+                                <div>
+                                    <h4>Molestiae dolor</h4>
+                                    <p>
+                                        Et fuga et deserunt et enim. Dolorem
+                                        architecto ratione tensa raptor marte
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="col-md-6 icon-box"
+                                data-aos="fade-up"
+                                data-aos-delay="500"
+                            >
+                                <i class="ri-radar-line"></i>
+                                <div>
+                                    <h4>Explicabo consectetur</h4>
+                                    <p>
+                                        Est autem dicta beatae suscipit. Sint
+                                        veritatis et sit quasi ab aut inventore
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Feature Icons -->
         </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-            <i class="ri-bar-chart-box-line" style="color: #5578ff"></i>
-            <h3><a href="">Payment Event</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
-            <i class="ri-calendar-todo-line" style="color: #e80368"></i>
-            <h3><a href="">Register Event</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-            <i class="ri-paint-brush-line" style="color: #e361ff"></i>
-            <h3><a href="">Scan QR Code</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
-            <i class="ri-database-2-line" style="color: #47aeff"></i>
-            <h3><a href="">Timeline Event</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-            <i class="ri-gradienter-line" style="color: #ffa76e"></i>
-            <h3><a href="">Eiusmod Tempor</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
-            <i class="ri-file-list-3-line" style="color: #11dbcf"></i>
-            <h3><a href="">Midela Teren</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-            <i class="ri-price-tag-2-line" style="color: #4233ff"></i>
-            <h3><a href="">Pira Neve</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
-            <i class="ri-anchor-line" style="color: #b2904f"></i>
-            <h3><a href="">Dirada Pack</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="500">
-            <i class="ri-disc-line" style="color: #b20969"></i>
-            <h3><a href="">Moton Ideal</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
-            <i class="ri-base-station-line" style="color: #ff5828"></i>
-            <h3><a href="">Verdo Park</a></h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box" data-aos="zoom-in" data-aos-delay="600">
-            <i class="ri-fingerprint-line" style="color: #29cc61"></i>
-            <h3><a href="">Flavor Nivelanda</a></h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>

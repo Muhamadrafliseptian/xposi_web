@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\BackEnd\AboutController;
-use App\Http\Controllers\BackEnd\EventController;
-use App\Http\Controllers\BackEnd\FeaturesController;
-use App\Http\Controllers\BackEnd\GalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BackEnd\AppController;
 use App\Http\Controllers\BackEnd\HeroController;
+use App\Http\Controllers\BackEnd\AboutController;
+use App\Http\Controllers\BackEnd\EventController;
+use App\Http\Controllers\BackEnd\GalleryController;
 use App\Http\Controllers\BackEnd\HowBookController;
-use App\Http\Controllers\BackEnd\ProfileAdministratorController;
+use App\Http\Controllers\BackEnd\FeaturesController;
 use App\Http\Controllers\BackEnd\ProfileCompanyController;
+use App\Http\Controllers\BackEnd\ProfileAdministratorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,8 @@ use App\Http\Controllers\BackEnd\ProfileCompanyController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AppController::class, "app"]);
+
 
 Route::prefix("/admin")->group(function(){
     Route::group(["middleware" => "guest"], function () {

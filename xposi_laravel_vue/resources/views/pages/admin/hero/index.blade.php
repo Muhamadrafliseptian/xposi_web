@@ -37,9 +37,9 @@
                     @endif
                 </div>
                 @if (empty($data_hero))
-                    {{ Form::open(['url' => '/admin/hero/', 'enctype' => 'multipart/form-data']) }}
+                    {{ Form::open(['url' => '/admin/hero/', 'enctype' => 'multipart/form-data', 'id' => 'hero']) }}
                 @else
-                    {{ Form::open(['url' => '/admin/hero/' . encrypt($data_hero->id), 'enctype' => 'multipart/form-data']) }}
+                    {{ Form::open(['url' => '/admin/hero/' . encrypt($data_hero->id), 'enctype' => 'multipart/form-data', 'id' => 'hero']) }}
                     @method('PUT')
                     @php
                         $hasil = trim($data_hero->image_hero, url('/'));
@@ -55,10 +55,10 @@
                             <br>
                             @if (empty($data_hero->image_hero))
                                 <img src="{{ url('/gambar/gambar_upload.jpg') }}" class="img-fluid image-preview mb-3"
-                                    id="viewImage">
+                                    id="image_hero">
                             @else
                                 <img src="{{ $data_hero->image_hero }}" class="img-fluid image-preview mb-3"
-                                    id="viewImage">
+                                    id="image_hero">
                             @endif
                             {{ Form::file('image_hero', ['class' => 'form-control', 'onchange' => 'previewImage()']) }}
                         </div>
@@ -114,7 +114,6 @@
             imgPreview.style.display = "block";
 
             const oFReader = new FileReader();
-            oFReader.readAsDataURL(image.files[0]);
 
             oFReader.onload = function(oFREvent) {
                 imgPreview.src = oFREvent.target.result;
@@ -122,5 +121,48 @@
                 $("#viewImage").height("250");
             }
         }
+        ! function(a, i, r) {
+            var e = {};
+            e.UTIL = {
+                setupFormValidation: function() {
+                    a("#hero").validate({
+                        ignore: "",
+                        rules: {
+                            image_hero: {
+                                required: !0
+                            },
+                            title_hero: {
+                                required: !0
+                            },
+                            icon_hero: {
+                                required: !0
+                            },
+                            description_hero: {
+                                required: !0
+                            }
+                        },
+                        messages: {
+                            viewImage: {
+                                required: "Field image cannot be null!"
+                            },
+                            title_hero: {
+                                required: "Field title cannot be null!"
+                            },
+                            icon_hero: {
+                                required: "Field icon cannot be null!"
+                            },
+                            description_hero: {
+                                required: "Field description cannot be null!"
+                            }
+                        },
+                        submitHandler: function(a) {
+                            a.submit()
+                        }
+                    })
+                }
+            }, a(r).ready(function(a) {
+                e.UTIL.setupFormValidation()
+            })
+        }(jQuery, window, document);
     </script>
 @endsection

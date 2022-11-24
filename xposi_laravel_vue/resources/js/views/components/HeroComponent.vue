@@ -1,38 +1,39 @@
-<!-- <template>
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
-          <div data-aos="zoom-out">
-            <h1>Your Event Partner<span> Xposi</span></h1>
-            <h2>We are team of talented health event organizer</h2>
-            <div class="text-center text-lg-start">
-              <a href="#about" class="btn-get-started scrollto">Download now</a>
+<template>
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">
+                        We offer modern solutions for growing your business
+                    </h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">
+                        We are team of talented designers making websites with
+                        Bootstrap
+                    </h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a
+                                href="#about"
+                                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                            >
+                                <span>Get Started</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="col-lg-6 hero-img"
+                    data-aos="zoom-out"
+                    data-aos-delay="200"
+                >
+                    <img
+                        src="assets/img/hero-img.png"
+                        class="img-fluid"
+                        alt=""
+                    />
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-        </div>
-      </div>
-    </div>
-
-    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-      <defs>
-        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
-      </defs>
-      <g class="wave1">
-        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
-      </g>
-      <g class="wave2">
-        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
-      </g>
-      <g class="wave3">
-        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
-      </g>
-    </svg>
-
-  </section><!-- End Hero -->
-</template> -->
+    </section>
+</template>
