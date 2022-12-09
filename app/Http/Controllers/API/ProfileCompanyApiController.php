@@ -9,12 +9,12 @@ use Illuminate\Http\Request;
 class ProfileCompanyApiController extends Controller
 {
     public function index(){
-        $data = ProfileCompany::get();
+        $profil = ProfileCompany::first();
 
         if (empty($data)) {
             return response()->json([["message" => "Data Not Found"]]);
         } else {
-            return response()->json([$data]);
+            return response()->json([$profil], 200);
         }
     }
 }

@@ -1,11 +1,14 @@
 <template>
     <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up" data-aos-duration="2000">
             <header class="section-header">
-                <h2>Contact</h2>
-                <p>Contact Us</p>
+                <h2>Contact Us</h2>
             </header>
-            <div class="row gy-4">
+            <div
+                class="row gy-4"
+                v-for="(profile_company, index) in dataCompany"
+                :key="index"
+            >
                 <div class="col-lg-6">
                     <div class="row gy-4">
                         <div class="col-md-6">
@@ -13,7 +16,7 @@
                                 <i class="bi bi-geo-alt"></i>
                                 <h3>Address</h3>
                                 <p>
-                                    A108 Adam Street,<br />New York, NY 535022
+                                    {{ profile_company.company_address }}
                                 </p>
                             </div>
                         </div>
@@ -21,14 +24,18 @@
                             <div class="info-box">
                                 <i class="bi bi-telephone"></i>
                                 <h3>Call Us</h3>
-                                <p>+1 5589 55488 55<br />+1 6678 254445 41</p>
+                                <p>
+                                    {{ profile_company.company_phone_number }}
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info-box">
                                 <i class="bi bi-envelope"></i>
                                 <h3>Email Us</h3>
-                                <p>info@example.com<br />contact@example.com</p>
+                                <p>
+                                    {{ profile_company.company_email }}
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -40,6 +47,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                     <form
                         action="forms/contact.php"
@@ -56,6 +64,7 @@
                                     required
                                 />
                             </div>
+
                             <div class="col-md-6">
                                 <input
                                     type="email"
@@ -65,6 +74,7 @@
                                     required
                                 />
                             </div>
+
                             <div class="col-md-12">
                                 <input
                                     type="text"
@@ -74,6 +84,7 @@
                                     required
                                 />
                             </div>
+
                             <div class="col-md-12">
                                 <textarea
                                     class="form-control"
@@ -83,12 +94,14 @@
                                     required
                                 ></textarea>
                             </div>
+
                             <div class="col-md-12 text-center">
                                 <div class="loading">Loading</div>
                                 <div class="error-message"></div>
                                 <div class="sent-message">
                                     Your message has been sent. Thank you!
                                 </div>
+
                                 <button type="submit">Send Message</button>
                             </div>
                         </div>
@@ -98,3 +111,27 @@
         </div>
     </section>
 </template>
+<script>
+import axios from "axios";
+export default {
+    name: "Contact",
+    data() {
+        return {
+            dataCompany: [],
+        };
+    },
+    created() {
+        this.getCompany();
+    },
+    methods: {
+        async getCompany() {
+            try {
+                const response = await axios.get("profile_company");
+                this.dataCompany = response.data;
+            } catch (error) {
+                console.log("Oopss. Error");
+            }
+        },
+    },
+};
+</script>

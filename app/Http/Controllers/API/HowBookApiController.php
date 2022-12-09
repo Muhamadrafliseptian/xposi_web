@@ -10,13 +10,20 @@ class HowBookApiController extends Controller
 {
     public function index()
     {
-        $data = HowBook::first();
+        $book = HowBook::orderBy("created_at", "DESC")->paginate(6);
 
-        if (empty($data)) {
-            return response()->json([["message" => "Data Tidak Ada"]]);
+        if ($book->count() < 1) {
+            $data = "Data Anda Belum Tersedia";
         } else {
-            return response()->json([$data]);
+            $data = [];
+            foreach ($book as $d) {
+                $data[] = [
+                    "icon_book" => $d->icon_book,
+                    "title_book" => $d->title_book,
+                    "description_book" => $d->description_book,
+                ];
+            }
         }
-
+        return response()->json($data, 200);
     }
 }

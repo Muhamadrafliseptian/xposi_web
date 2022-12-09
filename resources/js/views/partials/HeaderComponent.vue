@@ -1,71 +1,33 @@
 <template>
-    <header id="header" class="header fixed-top">
-        <div
-            class="container-fluid container-xl d-flex align-items-center justify-content-between"
+    <h1 class="visually-hidden">Headers examples</h1>
+
+    <div class="container">
+        <header
+            class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
         >
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="" />
-                <span>FlexStart</span>
+            <a
+                href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+            >
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="fs-4">XPOSI</span>
             </a>
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li>
-                        <a class="nav-link scrollto active" href="#hero"
-                            >Home</a
-                        >
-                    </li>
-                    <li>
-                        <a class="nav-link scrollto" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="nav-link scrollto" href="#services"
-                            >Services</a
-                        >
-                    </li>
-                    <li>
-                        <a class="nav-link scrollto" href="#portfolio"
-                            >Portfolio</a
-                        >
-                    </li>
-                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li class="dropdown">
-                        <a href="#"
-                            ><span>Drop Down</span>
-                            <i class="bi bi-chevron-down"></i
-                        ></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown">
-                                <a href="#"
-                                    ><span>Deep Drop Down</span>
-                                    <i class="bi bi-chevron-right"></i
-                                ></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="nav-link scrollto" href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a class="getstarted scrollto" href="#about"
-                            >Get Started</a
-                        >
-                    </li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-            <!-- .navbar -->
-        </div>
-    </header>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" aria-current="page">Home</a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Event</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </header>
+    </div>
 </template>

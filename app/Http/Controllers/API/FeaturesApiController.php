@@ -8,13 +8,22 @@ use App\Http\Controllers\Controller;
 
 class FeaturesApiController extends Controller
 {
-    public function index (){
-        $data = Features::first();
+    public function index()
+    {
+        $features = Features::orderBy("created_at", "DESC")->paginate(6);
 
-        if (empty($data)) {
-            return response()->json([["message" => "Data Not Found"]]);
+        if ($features->count() < 1) {
+            $data = "Data Anda Belum Tersedia";
         } else {
-            return response()->json([$data]);
+            $data = [];
+            foreach ($features as $d) {
+                $data[] = [
+                    "icon_features" => $d->icon_features,
+                    "title_features" => $d->title_features,
+                    "description_features" => $d->description_features,
+                ];
+            }
         }
+        return response()->json($data, 200);
     }
 }

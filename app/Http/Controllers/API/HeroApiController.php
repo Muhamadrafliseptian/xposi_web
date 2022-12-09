@@ -6,7 +6,7 @@ use App\Models\Hero;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class HeroController extends Controller
+class HeroApiController extends Controller
 {
     public function index()
     {

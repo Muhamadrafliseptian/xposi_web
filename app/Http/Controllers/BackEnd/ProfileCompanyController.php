@@ -12,7 +12,7 @@ class ProfileCompanyController extends Controller
      public function index()
     {
         $data = [
-            "data_profile" => ProfileCompany::select("id", "company_image", "company_name", "company_address", "company_phone_number", "company_description")->first()
+            "data_profile" => ProfileCompany::first()
         ];
 
         return view("pages.admin.profile_company.index", $data);
@@ -28,6 +28,7 @@ class ProfileCompanyController extends Controller
             "company_image" => url("/storage") . "/" . $data,
             "company_name" => $request->company_name,
             "company_address" => $request->company_address,
+            "company_email" => $request->company_email,
             "company_phone_number" => $request->company_phone_number,
             "company_description" => $request->company_description,
         ]);
@@ -53,6 +54,7 @@ class ProfileCompanyController extends Controller
             "company_image" => $data,
             "company_name" => $request->company_name,
             "company_address" => $request->company_address,
+            "company_email" => $request->company_email,
             "company_phone_number" => $request->company_phone_number,
             "company_description" => $request->company_description,
         ]);

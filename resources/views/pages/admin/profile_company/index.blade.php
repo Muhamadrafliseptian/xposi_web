@@ -86,6 +86,12 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        {{ Form::label('email', 'email') }}
+                                        {{ Form::email('company_email', empty($data_profile->company_email) ? null : $data_profile->company_email, ['class' => 'form-control', 'placeholder' => 'Masukkan Email']) }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         {{ Form::label('alamat', 'Alamat') }}
                                         {{ Form::text("company_address", empty($data_profile->company_address) ? null : $data_profile->company_address, ['class' => 'form-control', 'placeholder' => 'Masukkan Alamat']) }}
                                     </div>

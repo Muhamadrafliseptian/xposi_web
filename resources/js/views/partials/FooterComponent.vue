@@ -1,27 +1,5 @@
 <template>
     <footer id="footer" class="footer">
-        <div class="footer-newsletter">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12 text-center">
-                        <h4>Our Newsletter</h4>
-                        <p>
-                            Tamen quem nulla quae legam multos aute sint culpa
-                            legam noster magna
-                        </p>
-                    </div>
-                    <div class="col-lg-6">
-                        <form action="" method="post">
-                            <input type="email" name="email" /><input
-                                type="submit"
-                                value="Subscribe"
-                            />
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="footer-top">
             <div class="container">
                 <div class="row gy-4">
@@ -109,14 +87,12 @@
 
                     <div
                         class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+                        v-for="profil in profiles"
+                        :key="profil.id"
                     >
                         <h4>Contact Us</h4>
                         <p>
-                            A108 Adam Street <br />
-                            New York, NY 535022<br />
-                            United States <br /><br />
-                            <strong>Phone:</strong> +1 5589 55488 55<br />
-                            <strong>Email:</strong> info@example.com<br />
+                            {{ profil.company_name }}
                         </p>
                     </div>
                 </div>
@@ -139,3 +115,27 @@
         </div>
     </footer>
 </template>
+<script>
+import axios from "axios";
+export default {
+    name: "FooterComponent",
+    data() {
+        return {
+            profiles: [],
+        };
+    },
+    created() {
+        this.getProfil();
+    },
+    methods: {
+        async getProfil() {
+            try {
+                const response = await axios.get("profil");
+                this.profiles = response.data;
+            } catch (error) {
+                console.log("oops data not found in here");
+            }
+        },
+    },
+};
+</script>
