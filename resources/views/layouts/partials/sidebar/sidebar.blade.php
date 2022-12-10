@@ -59,7 +59,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('admin/hubungi_kami') ? 'active' : '' }}" href="{{ url('/admin/hubungi_kami') }}">
+                        <a class="nav-link {{ Request::is('admin/message') ? 'active' : '' }}" href="{{ url('/admin/message') }}">
                             <i class="fa fa-fw fa-phone"></i> Messages
                         </a>
                     </li>

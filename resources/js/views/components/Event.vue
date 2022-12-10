@@ -11,133 +11,102 @@
             <div
                 class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5"
             >
-                <div class="col">
+                <template v-if="dataEvent.length">
                     <div
-                        class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                        style="background-image: url('assets/3.jpg')"
+                        class="col"
+                        v-for="(event_newest, index) in dataEvent"
+                        :key="index"
                     >
                         <div
-                            class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+                            class="card card-cover img-fluid h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                            :style="{
+                                'background-image':
+                                    'url(' + event_newest.event_image + ')',
+                            }"
                         >
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                                Short title, long jacket
-                            </h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Dolores natus autem voluptas.
-                                Pariatur laboriosam cupiditate minima optio
-                                labore, fugit necessitatibus dolor quo omnis
-                                saepe praesentium molestias corrupti voluptate,
-                                sapiente architecto.
-                            </p>
-                            <ul class="d-flex list-unstyled mt-auto">
-                                <li class="me-auto">
-                                    <img
-                                        src="https://github.com/twbs.png"
-                                        alt="Bootstrap"
-                                        width="32"
-                                        height="32"
-                                        class="rounded-circle border border-white"
-                                    />
-                                </li>
-                                <li class="d-flex align-items-center me-3">
-                                    <svg
-                                        class="bi me-2"
-                                        width="1em"
-                                        height="1em"
-                                    >
-                                        <use xlink:href="#geo-fill" />
-                                    </svg>
-                                    <small>Jakarta</small>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <i class="fas fa-calendar me-2"></i>
-                                    <small>24 november 2022</small>
-                                </li>
-                            </ul>
+                            <div
+                                class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+                            >
+                                <h3
+                                    class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"
+                                >
+                                    {{ event_newest.event_name }}
+                                </h3>
+                                <p>
+                                    {{ event_newest.event_description }}
+                                </p>
+                                <ul class="d-flex list-unstyled mt-auto">
+                                    <li class="me-auto">
+                                        <img
+                                            src="https://github.com/twbs.png"
+                                            alt="Bootstrap"
+                                            width="32"
+                                            height="32"
+                                            class="rounded-circle border border-white"
+                                        />
+                                    </li>
+                                    <li class="d-flex align-items-center me-3">
+                                        <svg
+                                            class="bi me-2"
+                                            width="1em"
+                                            height="1em"
+                                        >
+                                            <use xlink:href="#geo-fill" />
+                                        </svg>
+                                        <small>{{
+                                            event_newest.event_time
+                                        }}</small>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-calendar me-2"></i>
+                                        <small>{{
+                                            event_newest.event_date
+                                        }}</small>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col">
-                    <div
-                        class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                        style="background-image: url('assets/3.jpg')"
-                    >
-                        <div
-                            class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
-                        >
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                                Much longer title that wraps to multiple lines
-                            </h3>
-                            <ul class="d-flex list-unstyled mt-auto">
-                                <li class="me-auto">
-                                    <img
-                                        src="assets/1.jpg"
-                                        alt="Bootstrap"
-                                        width="32"
-                                        height="32"
-                                        class="rounded-circle border border-white"
-                                    />
-                                </li>
-                                <li class="d-flex align-items-center me-3">
-                                    <svg
-                                        class="bi me-2"
-                                        width="1em"
-                                        height="1em"
-                                    >
-                                        <use xlink:href="#geo-fill" />
-                                    </svg>
-                                    <small>Jakarta</small>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <i class="fas fa-calendar me-2"></i>
-                                    <small>24 november 2022</small>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div
-                        class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                        style="background-image: url('assets/3.jpg')"
-                    >
-                        <div
-                            class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1"
-                        >
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                                Another longer title belongs here
-                            </h3>
-                            <ul class="d-flex list-unstyled mt-auto">
-                                <li class="me-auto">
-                                    <img
-                                        src="https://github.com/twbs.png"
-                                        alt="Bootstrap"
-                                        width="32"
-                                        height="32"
-                                        class="rounded-circle border border-white"
-                                    />
-                                </li>
-                                <li class="d-flex align-items-center me-3">
-                                    <svg
-                                        class="bi me-2"
-                                        width="1em"
-                                        height="1em"
-                                    >
-                                        <use xlink:href="#geo-fill" />
-                                    </svg>
-                                    <small>Jakarta</small>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <i class="fas fa-calendar me-2"></i>
-                                    <small>24 november 2022</small>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                </template>
             </div>
         </div>
     </section>
 </template>
+<script>
+import axios from "axios";
+export default {
+    name: "Event",
+    data() {
+        return {
+            dataEvent: [],
+            spinner: false,
+            output: false,
+        };
+    },
+    created() {
+        this.getEvent();
+    },
+    methods: {
+        async getEvent() {
+            try {
+                this.spinner = true;
+                const response = await axios.get("event_newest");
+
+                if (response.data == "Data Anda Belum Tersedia") {
+                    setTimeout(() => {
+                        this.output = true;
+                        this.spinner = false;
+                    }, 1000);
+                } else {
+                    setTimeout(() => {
+                        this.dataEvent = response.data;
+                        this.spinner = false;
+                    }, 1000);
+                }
+            } catch (error) {
+                console.log("Oopss. Error");
+            }
+        },
+    },
+};
+</script>

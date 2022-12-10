@@ -13,9 +13,7 @@
                             <div class="card shadow-sm">
                                 <img
                                     :src="gallery.image_gallery"
-                                    class="bd-placeholder-img card-img-top"
-                                    width="100%"
-                                    height="225"
+                                    class="bd-placeholder-img img-fluid card-img-top"
                                     role="img"
                                     focusable="false"
                                     alt=""

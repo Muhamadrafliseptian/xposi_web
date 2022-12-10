@@ -29,7 +29,7 @@
                     </p>
                     <div class="text-center text-lg-start">
                         <a
-                            href="#sejarah"
+                            href=""
                             class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
                         >
                             <span>Get Started</span>

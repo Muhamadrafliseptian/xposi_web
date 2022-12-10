@@ -10,13 +10,23 @@ class EventApiController extends Controller
 {
     public function index()
     {
-        $data = Event::first();
+        $event = Event::orderBy("created_at", "DESC")->paginate(6);
 
-        if (empty($data)) {
-            return response()->json([["message" => "Data Tidak Ada"]]);
+        if ($event->count() < 1) {
+            $data = "Data Anda Belum Tersedia";
         } else {
-            return response()->json([$data]);
+            $data = [];
+            foreach ($event as $d) {
+                $data[] = [
+                    "event_image" => $d->event_image,
+                    "event_name" => $d->event_name,
+                    "event_description" => $d->event_description,
+                    "event_price" => $d->event_price,
+                    "event_time" => $d->event_time,
+                    "event_date" => $d->event_date
+                ];
+            }
         }
-
+        return response()->json($data, 200);
     }
 }

@@ -204,3 +204,94 @@
 .contact .php-email-form button[type="submit"]:hover {
     background: #5969f3;
 }
+
+#hero h1 {
+    font-weight: 700;
+    color: #012970;
+}
+
+#hero p {
+    color: #444444;
+    margin: 15px 0 0 0;
+    font-size: 26px;
+}
+
+#about h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4154f1;
+    text-transform: uppercase;
+}
+
+#about h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #032766;
+}
+
+#about p {
+    margin: 15px 0 30px 0;
+    line-height: 24px;
+    font-size: 18px;
+}
+
+#book .card {
+    border: none;
+    background: #fff;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+
+#book .card-title {
+    font-size: 24px;
+    display: block;
+    font-weight: 600;
+    color: #0b198f;
+}
+
+#book .card-text p {
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+}
+
+.features .feature-icons {
+    margin-top: 10px;
+}
+
+.features .feature-icons h3 {
+    color: #012970;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .features .feature-icons h3 {
+        font-size: 28px;
+    }
+}
+
+.features .feature-icons .content .icon-box {
+    display: flex;
+}
+
+.features .feature-icons .content .icon-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #012970;
+}
+
+.features .feature-icons .content .icon-box i {
+    font-size: 44px;
+    line-height: 44px;
+    color: #0245bc;
+    margin-right: 15px;
+}
+
+.features .feature-icons .content .icon-box p {
+    font-size: 15px;
+    color: #848484;
+}

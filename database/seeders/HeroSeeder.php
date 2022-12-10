@@ -17,8 +17,8 @@ class HeroSeeder extends Seeder
     {
         Hero::create ([
             "icon_hero" => "fas fa-user",
-            "title_hero" => "XPOSI",
-            "description_hero" => "woww",
+            "title_hero" => "We offer modern solutions for growing your business",
+            "description_hero" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit",
             "image_hero" => "https://images.unsplash.com/photo-1661637051124-15a46f74f30b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         ]);
     }

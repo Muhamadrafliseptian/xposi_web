@@ -10,6 +10,7 @@ use App\Http\Controllers\BackEnd\EventController;
 use App\Http\Controllers\BackEnd\GalleryController;
 use App\Http\Controllers\BackEnd\HowBookController;
 use App\Http\Controllers\BackEnd\FeaturesController;
+use App\Http\Controllers\BackEnd\MessageController;
 use App\Http\Controllers\BackEnd\ProfileCompanyController;
 use App\Http\Controllers\BackEnd\ProfileAdministratorController;
 
@@ -41,6 +42,8 @@ Route::prefix("/admin")->group(function(){
     Route::resource("event_newest", EventController::class);
         //how to book
     Route::resource("how_book", HowBookController::class);
+        //message
+    Route::resource("message", MessageController::class);
 
         //gallery
     Route::get("/gallery/edit", [GalleryController::class, "edit"]);

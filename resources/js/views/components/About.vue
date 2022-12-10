@@ -11,12 +11,13 @@
                 :key="index"
             >
                 <div class="col-10 col-sm-8 col-lg-6">
-                    <h1 class="display-5 fw-bold lh-1 mb-3 text-primary">
+                    <h3>Who We Are</h3>
+                    <h1 class="display-5 fw-bold lh-1 mb-3">
                         {{ about.title_about }}
                     </h1>
-                    <p class="lead">
+                    <h6 class="lead">
                         {{ about.description_about }}
-                    </p>
+                    </h6>
                 </div>
                 <div class="col-lg-6">
                     <img

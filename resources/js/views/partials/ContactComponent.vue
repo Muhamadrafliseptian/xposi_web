@@ -4,12 +4,12 @@
             <header class="section-header">
                 <h2>Contact Us</h2>
             </header>
-            <div
-                class="row gy-4"
-                v-for="(profile_company, index) in dataCompany"
-                :key="index"
-            >
-                <div class="col-lg-6">
+            <div class="row gy-4">
+                <div
+                    class="col-lg-6"
+                    v-for="(profile_company, index) in dataCompany"
+                    :key="index"
+                >
                     <div class="row gy-4">
                         <div class="col-md-6">
                             <div class="info-box">
@@ -50,9 +50,9 @@
 
                 <div class="col-lg-6">
                     <form
-                        action="forms/contact.php"
                         method="post"
                         class="php-email-form"
+                        @submit.prevent="sendmessage"
                     >
                         <div class="row gy-4">
                             <div class="col-md-6">
@@ -62,6 +62,8 @@
                                     class="form-control"
                                     placeholder="Your Name"
                                     required
+                                    v-model="message.name"
+                                    id="name"
                                 />
                             </div>
 
@@ -72,6 +74,8 @@
                                     name="email"
                                     placeholder="Your Email"
                                     required
+                                    v-model="message.email"
+                                    id="email"
                                 />
                             </div>
 
@@ -82,16 +86,20 @@
                                     name="subject"
                                     placeholder="Subject"
                                     required
+                                    v-model="message.subject"
+                                    id="subject"
                                 />
                             </div>
 
                             <div class="col-md-12">
                                 <textarea
                                     class="form-control"
-                                    name="message"
+                                    name="text"
                                     rows="6"
                                     placeholder="Message"
                                     required
+                                    v-model="message.text"
+                                    id="text"
                                 ></textarea>
                             </div>
 
@@ -102,7 +110,12 @@
                                     Your message has been sent. Thank you!
                                 </div>
 
-                                <button type="submit">Send Message</button>
+                                <button type="submit">
+                                    <span v-if="loading">
+                                        <i> Form Is Proccessing</i>
+                                    </span>
+                                    <span v-else> Send Message </span>
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -118,6 +131,8 @@ export default {
     data() {
         return {
             dataCompany: [],
+            message: [],
+            loading: false,
         };
     },
     created() {
@@ -130,6 +145,33 @@ export default {
                 this.dataCompany = response.data;
             } catch (error) {
                 console.log("Oopss. Error");
+            }
+        },
+        sendmessage() {
+            if (
+                this.message.name &&
+                this.message.email &&
+                this.message.subject &&
+                this.message.text
+            ) {
+                axios
+                    .post("message", {
+                        message_name: this.message.name,
+                        message_email: this.message.email,
+                        message_subject: this.message.subject,
+                        message_text: this.message.text,
+                    })
+                    .then((response) => {
+                        this.loading = true;
+                        setTimeout(() => {
+                            this.loading = false;
+                            alert("Data Berhasil di Tambahkan");
+                            window.location = "/";
+                        }, 1000);
+                    })
+                    .catch((error) => {
+                        alert("Harap Isi Form Dengan Benar");
+                    });
             }
         },
     },

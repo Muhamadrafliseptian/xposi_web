@@ -3,7 +3,7 @@
         <div class="" data-aos="fade-right" data-aos-duration="2000">
             <template v-if="dataBook.length">
                 <div class="container">
-                    <h2 class="pb-2 border-bottom pt-5">Features On Apps</h2>
+                    <h2 class="pb-2 border-bottom pt-5">How To Book Event?</h2>
                 </div>
                 <div class="container col-xxl-6 text-center py-5">
                     <div
